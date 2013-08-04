@@ -1,4 +1,4 @@
-package Characters 
+package State.Characters 
 {
 	/**
 	 * ...
