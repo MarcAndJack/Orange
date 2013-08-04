@@ -1,6 +1,5 @@
 package 
 {
-	import Characters.Player;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.TextEvent;
@@ -17,7 +16,6 @@ package
 	{
 		protected var m_inputBox:TextField;
 		protected var m_outputBox:TextField;
-		protected var m_player:Player;
 		
 		public function Main():void 
 		{
