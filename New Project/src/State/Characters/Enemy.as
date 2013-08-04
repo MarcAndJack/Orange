@@ -1,8 +1,7 @@
 package Characters 
 {
 	/**
-	 * ...
-	 * @author ...
+	 * @author MAF
 	 */
 	public class Enemy 
 	{
