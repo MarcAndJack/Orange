@@ -13,6 +13,9 @@ package State.Items
 			
 		}
 		
+		/**
+		 * returns the questKey
+		 */
 		public function get m_questKey():String
 		{
 			return m_questKey;

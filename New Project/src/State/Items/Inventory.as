@@ -6,7 +6,7 @@ package State.Items
 	 */
 	public class Inventory 
 	{
-		protected var m_items:Vector.<Item>
+		protected var m_items:Vector.<Item>;
 		
 		public function Inventory() 
 		{
@@ -22,13 +22,23 @@ package State.Items
 		{
 			if (item is ConsumableItem)
 			{
-				m_items.splice(m_items.indexOf(item), 1);
+				removeItem(item);
 				return (item as ConsumableItem).consume();
 			}
 			else
 			{
 				return null;
 			}
-		}		
+		}
+		
+		public function addItem(item:Item):void
+		{
+			m_items.push(item);
+		}
+		
+		public function removeItem(item:Item):Item
+		{
+			m_items.splice(m_items.indexOf(item), 1);
+		}
 	}
 }

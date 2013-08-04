@@ -14,11 +14,17 @@ package State.Items
 			
 		}
 		
+		/**
+		 * returns the name of this item
+		 */
 		public function get name():String
 		{
 			return m_name;
 		}
 		
+		/**
+		 * returns the description
+		 */
 		public function get description():String
 		{
 			return m_descrption;
