@@ -6,6 +6,7 @@ package
 	import flash.events.KeyboardEvent;
 	import flash.ui.Keyboard;
 	import flash.text.*;
+	import State.Characters.Player;
 	[SWF(width="800", height="500", backgroundColor="0xFFFFFF")]
 	
 	/**
@@ -40,6 +41,7 @@ package
 			m_outputBox = new TextField();
 			m_outputBox.width = 800;
 			m_outputBox.y = m_inputBox.height;
+			m_outputBox.height = 500 - m_inputBox.height;
 			addChild(m_outputBox);
 		}		
 		
@@ -59,7 +61,25 @@ package
 		
 		private function handleInput(str:String):void
 		{
-			
+			var p:Player;
+			switch (str) {
+				case ("warrior"):
+					p = new Player("hi", 1, "warrior");
+					break;
+				case ("rogue"):
+					p = new Player("hi", 1, "rogue");
+					break;
+				case ("wizard"):
+					p = new Player("hi", 1, "wizard");
+					break;
+				default: 
+					createOutput("invalid input, try again.");
+					break;
+			}
+			if (p != null) {
+				createOutput("name: " + p.name + ", level: " + p.level);
+				displayStats(p);
+			}
 		}
 		
 		/**
@@ -71,6 +91,15 @@ package
 			m_outputBox.background = true; 
 			
             m_outputBox.text = m_outputBox.text + "\n" + str;
+		}
+		
+		private function displayStats(p:Player):void {
+			createOutput("STR: " + p.baseStats["STR"]);
+			createOutput("DEX: " + p.baseStats["DEX"]);
+			createOutput("CON: " + p.baseStats["CON"]);
+			createOutput("INT: " + p.baseStats["INT"]);
+			createOutput("WIS: " + p.baseStats["WIS"]);
+			createOutput("CHA: " + p.baseStats["CHA"]);
 		}
 	}	
 }

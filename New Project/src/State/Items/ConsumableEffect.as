@@ -16,7 +16,7 @@ package State.Items
 			
 		}
 		
-		public function get m_effects():Dictionary
+		public function get effects():Dictionary
 		{
 			m_uses--;
 			if (m_uses < 0)

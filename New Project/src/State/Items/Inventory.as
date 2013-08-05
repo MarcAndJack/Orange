@@ -36,7 +36,7 @@ package State.Items
 			m_items.push(item);
 		}
 		
-		public function removeItem(item:Item):Item
+		public function removeItem(item:Item):void
 		{
 			m_items.splice(m_items.indexOf(item), 1);
 		}

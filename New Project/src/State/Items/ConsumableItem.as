@@ -15,7 +15,7 @@ package State.Items
 		
 		public function consume():ConsumableEffect
 		{
-			var effect = m_effect;
+			var effect:ConsumableEffect = m_effect;
 			m_effect = null;
 			return effect;
 		}

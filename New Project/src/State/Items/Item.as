@@ -27,7 +27,7 @@ package State.Items
 		 */
 		public function get description():String
 		{
-			return m_descrption;
+			return m_description;
 		}
 		
 	}
