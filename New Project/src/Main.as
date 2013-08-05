@@ -10,7 +10,6 @@ package
 	[SWF(width="800", height="500", backgroundColor="0xFFFFFF")]
 	
 	/**
-	 * ...
 	 * @author Jack
 	 */
 	public class Main extends Sprite 
@@ -53,7 +52,7 @@ package
 					var str:String = m_inputBox.text;
 					m_inputBox.text = "";
 					handleInput(str);
-					createOutput(str);
+					//createOutput(str);
 					break;
 			}
 			

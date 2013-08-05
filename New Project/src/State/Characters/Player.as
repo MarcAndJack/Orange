@@ -22,15 +22,15 @@ package State.Characters
 		private function setClass():void {
 			switch (m_classification) {
 				case ("warrior"):
-					setBaseStats(20, 20, 20, 20, 20, 20, 20);
+					setBaseStats(20, 14, 18, 10, 10, 8, 32);
 					//warrior stats
 					break;
 				case ("rogue"):
-					setBaseStats(20, 20, 20, 20, 20, 20, 20);
+					setBaseStats(11, 20, 11, 13, 13, 12, 25);
 					//roque stats
 					break;
 				case ("wizard"):
-					setBaseStats(20, 20, 20, 20, 20, 20, 20);
+					setBaseStats(8, 9, 10, 18, 17, 18, 20);
 					//wizard stats
 					break;
 				default: new Error("invalid class");
