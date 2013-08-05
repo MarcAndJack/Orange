@@ -1,6 +1,6 @@
 package State.Rooms 
 {
-	import Characters.Character;
+	import State.Characters.Character;
 	import flash.utils.Dictionary;
 	import State.Items.Item;
 	/**
@@ -44,7 +44,7 @@ package State.Rooms
 			return m_visited;
 		}
 		
-		public function set visited(value:Boolean = true):void
+		public function set visited(value:Boolean):void
 		{
 			m_visited = value;
 		}
@@ -60,7 +60,7 @@ package State.Rooms
 			m_items.push(item);
 		}
 		
-		public function removeItem(item:Item):Item
+		public function removeItem(item:Item):void
 		{
 			m_items.splice(m_items.indexOf(item), 1);
 		}
@@ -74,8 +74,6 @@ package State.Rooms
 		{
 			m_characters.splice(m_characters.indexOf(character), 1);
 		}
-		
-		public function get 
 		
 		/**
 		 * 
@@ -150,7 +148,7 @@ package State.Rooms
 					m_nextRoom = m_adjacentRooms.west;
 			}
 			
-			if (commandFunction)
+			if (commandFunction != null)
 			{
 				return commandFunction();
 			}
@@ -187,17 +185,17 @@ package State.Rooms
 		
 		public function attack():String
 		{
-			
+			return "attacking";
 		}
 		
 		public function loot():String
 		{
-			
+			return "looting";
 		}
 		
 		public function moveRoom():String
 		{
-			
+			return "moving"
 		}
 	}
 

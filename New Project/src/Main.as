@@ -7,6 +7,7 @@ package
 	import flash.ui.Keyboard;
 	import flash.text.*;
 	import State.Characters.Player;
+	import State.Rooms.Room;
 	[SWF(width="800", height="500", backgroundColor="0xFFFFFF")]
 	
 	/**
@@ -16,6 +17,9 @@ package
 	{
 		protected var m_inputBox:TextField;
 		protected var m_outputBox:TextField;
+		
+		protected var m_player:Player;
+		protected var m_room:Room;
 		
 		public function Main():void 
 		{
@@ -60,24 +64,34 @@ package
 		
 		private function handleInput(str:String):void
 		{
-			var p:Player;
-			switch (str) {
-				case ("warrior"):
-					p = new Player("hi", 1, "warrior");
-					break;
-				case ("rogue"):
-					p = new Player("hi", 1, "rogue");
-					break;
-				case ("wizard"):
-					p = new Player("hi", 1, "wizard");
-					break;
-				default: 
-					createOutput("invalid input, try again.");
-					break;
+			if (m_room)
+			{
+				m_room.handleCommand(str);
 			}
-			if (p != null) {
-				createOutput("name: " + p.name + ", level: " + p.level);
-				displayStats(p);
+			else
+			{
+				// Set up character
+				switch (str) {
+					case ("warrior"):
+						m_player = new Player("hi", 1, "warrior");
+						break;
+					case ("rogue"):
+						m_player = new Player("hi", 1, "rogue");
+						break;
+					case ("wizard"):
+						m_player = new Player("hi", 1, "wizard");
+						break;
+					default: 
+						createOutput("invalid input, try again.");
+						m_player = null;
+						break;
+				}
+				if (m_player != null) {
+					createOutput("name: " + m_player.name + ", level: " + m_player.level);
+					displayStats(m_player);
+				}
+				
+				// Enter room
 			}
 		}
 		
